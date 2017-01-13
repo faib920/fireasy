@@ -1,0 +1,80 @@
+﻿.panel-title {
+    font-size:14px;
+}
+.panel-body {
+    font-size:14px;
+}
+
+.datagrid-row {
+    height:28px;
+}
+.datagrid-cell-number {
+    font-size:14px;
+}
+
+.datagrid-cell {
+    font-size:14px;
+}
+.datagrid-header-row {
+    height:30px;
+}
+.datagrid-header .datagrid-cell span {
+    font-size:14px;
+}
+
+.pagination-info {
+    font-size:14px;
+}
+.pagination span {
+    font-size:14px;
+}
+
+.l-btn-text {
+    font-size:14px;
+}
+.pagination-first, .pagination-prev, .pagination-next, .pagination-last {
+    width:8px;
+    margin-left:5px;
+}
+
+.tree-title {
+    font-size:14px;
+}
+
+.tree-node {
+    height:22px;
+    padding-top:4px;
+}
+
+.textbox .textbox-prompt {
+    font-size:14px;
+}
+
+.textbox .textbox-text {
+    font-size:14px;
+}
+
+.validate-text {
+    font-size:14px;
+}
+
+.tooltip-content {
+    font-size:14px;
+}
+
+.combobox-item {
+    font-size:14px;
+    cursor:pointer;
+}
+
+.calendar table td, .calendar table th {
+    font-size:14px;
+}
+
+.calendar-title span {
+    font-size:14px;
+}
+
+.query {
+    padding:4px;
+}

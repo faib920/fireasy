@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92F83A09-4848-4D84-A5EE-48F397ADEADA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fireasy.Windows.Forms</RootNamespace>
+    <AssemblyName>Fireasy.Windows.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Fireasy.Windows.Forms.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Fireasy.Windows.Forms.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N35|AnyCPU'">
+    <OutputPath>bin\N35\</OutputPath>
+    <DefineConstants>TRACE;N35</DefineConstants>
+    <DocumentationFile>bin\N35\Fireasy.Windows.Forms.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <CodeAnalysisLogFile>bin\N35\Fireasy.Windows.Forms.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N40|AnyCPU'">
+    <OutputPath>bin\N40\</OutputPath>
+    <DefineConstants>TRACE;N40</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\N40\Fireasy.Windows.Forms.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <DocumentationFile>bin\N40\Fireasy.Windows.Forms.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N45|AnyCPU'">
+    <OutputPath>bin\N45\</OutputPath>
+    <DefineConstants>TRACE;N45</DefineConstants>
+    <DocumentationFile>bin\N45\Fireasy.Windows.Forms.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <CodeAnalysisLogFile>bin\N35\Fireasy.Windows.Forms.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>../documents/sign/fireasy.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Fireasy.Assembly\__Version.cs">
+      <Link>__Version.cs</Link>
+    </Compile>
+    <Compile Include="BaseRenderer.cs" />
+    <Compile Include="CheckState.cs" />
+    <Compile Include="ComplexComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComplexTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Configuration\ThemeConfigurationSection.cs" />
+    <Compile Include="ControlRenderer.cs" />
+    <Compile Include="DrawState.cs" />
+    <Compile Include="ErrorMessageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ErrorMessageBox.Designer.cs">
+      <DependentUpon>ErrorMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GripBounds.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="IBackgroundAligning.cs" />
+    <Compile Include="IBorderStylization.cs" />
+    <Compile Include="IDataFormattable.cs" />
+    <Compile Include="IImageDefinition.cs" />
+    <Compile Include="MaskTextBox\Behavior.cs" />
+    <Compile Include="MaskTextBox\CurrencyBehavior.cs" />
+    <Compile Include="MaskTextBox\CurrencyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaskTextBox\DateBehavior.cs" />
+    <Compile Include="MaskTextBox\DateTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaskTextBox\DateTimeBehavior.cs" />
+    <Compile Include="MaskTextBox\DateTimeTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaskTextBox\IntegerBehavior.cs" />
+    <Compile Include="MaskTextBox\IntegerTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaskTextBox\MaskBaseTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaskTextBox\MaskBehavior.cs" />
+    <Compile Include="MaskTextBox\MaskTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaskTextBox\NumericBehavior.cs" />
+    <Compile Include="MaskTextBox\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaskTextBox\Selection.cs" />
+    <Compile Include="MaskTextBox\TimeBehavior.cs" />
+    <Compile Include="MaskTextBox\TimeTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Popup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PopupComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DataFormatEditor.cs" />
+    <Compile Include="Configuration\ThemeConfigurationSectionHandler.cs" />
+    <Compile Include="ThemeManager.cs" />
+    <Compile Include="TreeList\BoxType.cs" />
+    <Compile Include="TreeList\Decorations\TreeListBooleanDecorationRenderer.cs" />
+    <Compile Include="TreeList\Decorations\TreeListDefaultDecorationRenderer.cs" />
+    <Compile Include="TreeList\Decorations\TreeListIdentityDecorationRenderer.cs" />
+    <Compile Include="TreeList\Decorations\TreeListProgressDecorationRenderer.cs" />
+    <Compile Include="TreeList\Decorations\TreeListRankDecorationRenderer.cs" />
+    <Compile Include="TreeList\Editors\DrawStringEventArgs.cs" />
+    <Compile Include="TreeList\Editors\ITreeListEditor.cs" />
+    <Compile Include="TreeList\Editors\TreeListComboBoxEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\Editors\TreeListComplexComboBoxEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\Editors\TreeListDateTimeEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\Editors\TreeListNumericUpDownEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\ToolTipWrapper.cs" />
+    <Compile Include="TreeList\TreeListCheckedItemCollection.cs" />
+    <Compile Include="TreeList\TreeListFooterItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\TreeListItemComparer.cs" />
+    <Compile Include="TreeList\TreeListSelectedItemCollection.cs" />
+    <Compile Include="TreeList\TreeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeList\TreeListBound.cs" />
+    <Compile Include="TreeList\Editors\TreeListCheckBoxEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\Editors\TreeListNumericEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\Editors\TreeListIntegerEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\Editors\TreeListTextEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\Editors\TreeListCellWrapEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\TreeListEditorFactory.cs" />
+    <Compile Include="TreeList\TreeListColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\TreeListColumnCollection.cs" />
+    <Compile Include="TreeList\Decorations\TreeListDecorationRenderer.cs" />
+    <Compile Include="TreeList\TreeListDesigner.cs" />
+    <Compile Include="TreeList\TreeListEventHandler.cs" />
+    <Compile Include="TreeList\TreeListGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\TreeListGroupCollection.cs" />
+    <Compile Include="TreeList\TreeListHitTestInfo.cs" />
+    <Compile Include="TreeList\TreeListItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\TreeListItemCollection.cs" />
+    <Compile Include="TreeList\TreeListRenderer.cs" />
+    <Compile Include="TreeList\TreeListCell.cs" />
+    <Compile Include="TreeList\TreeListCellCollection.cs" />
+    <Compile Include="TreeList\TreeListEditController.cs" />
+    <Compile Include="TreeList\TreeListCellDataType.cs" />
+    <Compile Include="TreeList\TreeList_DataBind.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\TreeList_Event.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\TreeList_HitTest.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\TreeList_Select.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeList\VirtualItemManager.cs" />
+    <Compile Include="TreeList\VirtualTreeListItemCollection.cs" />
+    <Compile Include="NativeMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fireasy.Common\Fireasy.Common.csproj">
+      <Project>{0db77bab-b4fb-40c6-a2ef-2be8a4d69884}</Project>
+      <Name>Fireasy.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeList\TreeList.bmp">
+      <DependentUpon>TreeList.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree_file.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree_folder.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree_folder_open.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

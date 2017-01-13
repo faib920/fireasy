@@ -1,0 +1,476 @@
+// -----------------------------------------------------------------------
+// <copyright company="Fireasy"
+//      email="faib920@126.com"
+//      qq="55570729">
+//   (c) Copyright Fireasy. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
+using Fireasy.Data.Entity.Extensions;
+using Fireasy.Data.Entity.Linq;
+using Fireasy.Data.Entity.Linq.Translators;
+using Fireasy.Data.Entity.Metadata;
+using Fireasy.Common;
+using Fireasy.Common.Extensions;
+using System.Collections;
+
+namespace Fireasy.Data.Entity
+{
+    /// <summary>
+    /// 为实体树提供一组特殊的数据持久化方法。
+    /// </summary>
+    /// <typeparam name="TEntity">实体类型。</typeparam>
+    public class EntityTreePersister<TEntity> where TEntity : class, IEntity
+    {
+        private EntityTreeMetadata metadata;
+        private TreeExpressionBuilder<TEntity> builder;
+        private EntityRepository<TEntity> repository;
+        private static PropertyInfo StringLengthProperty = typeof(string).GetProperty("Length");
+        private static MethodInfo StringStartsWithMethod = typeof(string).GetMethod("StartsWith", new[] { typeof(string) });
+
+        /// <summary>
+        /// 实体树更新时通知客户端程序。
+        /// </summary>
+        public event EntityTreeUpdatingEventHandler<TEntity> EntityTreeUpdating;
+
+        /// <summary>
+        /// 初始化 <see cref="T:Fireasy.Data.Entity.EntityTreePersister`1"/> 类的新实例。
+        /// </summary>
+        /// <param name="repository">实例名。</param>
+        public EntityTreePersister(EntityRepository<TEntity> repository)
+        {
+            this.repository = repository;
+            metadata = EntityMetadataUnity.GetEntityMetadata(typeof(TEntity)).EntityTree;
+            builder = new TreeExpressionBuilder<TEntity>(repository as IQueryable<TEntity>, metadata);
+        }
+
+        /// <summary>
+        /// 将一个新的 <typeparamref name="TEntity"/> 对象持久化。
+        /// </summary>
+        /// <param name="entity">要持久化的实体对象。</param>
+        public void Insert(TEntity entity)
+        {
+
+            /*
+            try
+            {
+                var arg = CreateUpdatingArgument(entity);
+
+                //获得新节点的Order值
+                arg.NewValue.Order = GetNewOrderNumber(null, EntityTreePosition.Children);
+                arg.NewValue.Level = 1;
+
+                //生成新的InnerID
+                arg.NewValue.FullName = arg.OldValue.Name;
+                arg.NewValue.InnerId = GenerateInnerId(string.Empty, arg.NewValue.Order, EntityTreePosition.Children);
+                UpdateEntityByArgument(entity, arg);
+
+                repository.Insert(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new EntityTreePersistentException(SR.GetString(SRKind.FailInEntityCreate), ex);
+            }
+             */
+        }
+
+        /// <summary>
+        /// 更新实体对象的修改。如果已经定义了 FullName 则会更新当前对象及相关的子实体对象 的 FullName 属性。
+        /// </summary>
+        /// <param name="entity">要更新的实体对象。</param>
+        public void Update(TEntity entity)
+        {
+            /*
+            if (entity.EntityState == EntityState.Unchanged)
+            {
+                return;
+            }
+
+            var entityEx = entity.As<IEntityStatefulExtension>();
+
+            //判断是否需要更新 FullName
+            var updateFullName = metadata.Name != null && metadata.FullName != null &&
+                entityEx != null && entityEx.IsModified(metadata.Name.Name);
+
+            if (!updateFullName)
+            {
+                repository.Update(entity);
+                return;
+            }
+
+            var arg = CreateUpdatingArgument(entity);
+            var children = GetChildren(arg);
+            var fullName = GenerateFullName(entity);
+            UpdateChildrenFullName(entity, children, fullName);
+
+            arg.NewValue.FullName = fullName;
+
+            UpdateEntityByArgument(entity, arg);
+
+            try
+            {
+                repository.Update(entity);
+                repository.Batch(children, (u, s) => u.Update(s));
+            }
+            catch (Exception ex)
+            {
+                throw new EntityTreePersistentException(SR.GetString(SRKind.FailInEntityUpdate), ex);
+            }
+             */
+        }
+
+        /// <summary>
+        /// 将一个实体插入到参照实体的相应位置。
+        /// </summary>
+        /// <param name="entity">插入的实体。</param>
+        /// <param name="referEntity">参照的实体。</param>
+        /// <param name="position">插入的位置。</param>
+        public void Insert(TEntity entity, TEntity referEntity, EntityTreePosition position)
+        {
+            Guard.ArgumentNull(entity, "entity");
+
+            /*
+
+            if (referEntity == null)
+            {
+                repository.Insert(entity);
+                return;
+            }
+
+            var arg1 = CreateUpdatingArgument(entity);
+            var arg2 = CreateUpdatingArgument(referEntity);
+
+            var keyId = arg2.OldValue.InnerId;
+
+            //获得新节点的Order值
+            arg1.NewValue.Order = GetNewOrderNumber(arg2.OldValue, position);
+
+            //获得参照节点的级别
+            arg1.NewValue.Level = arg2.OldValue.Level;
+
+            //如果插入为孩子，级别则+1
+            if (position == EntityTreePosition.Children)
+            {
+                arg1.NewValue.Level += 1;
+            }
+
+            //生成新的InnerID
+            arg1.NewValue.InnerId = GenerateInnerId(keyId, arg1.NewValue.Order, position);
+            arg1.NewValue.FullName = GenerateFullName(arg1, arg2, position);
+
+            IEnumerable<TEntity> brothers = null;
+            if (position != EntityTreePosition.Children)
+            {
+                //获取参考节点的兄弟及其孩子（还有可能包括它自己）
+                brothers = GetBrothersAndChildren(arg2, position == EntityTreePosition.Before, null);
+
+                //兄弟及其孩子要下移一个单位
+                UpdateBrothersAndChildren(entity, brothers, arg1.NewValue.InnerId, 1);
+            }
+
+            UpdateEntityByArgument(entity, arg1);
+
+            try
+            {
+                repository.Insert(entity);
+                if (brothers != null)
+                {
+                    repository.Batch(brothers, (u, s) => u.Update(s));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new EntityTreePersistentException(SR.GetString(SRKind.FailInEntityInsert), ex);
+            }
+             */
+        }
+
+        /// <summary>
+        /// 将指定的实体对象从库中移除。
+        /// </summary>
+        /// <param name="entity">要移除的实体对象。</param>
+        /// <param name="fake">如果具有 IsDeletedKey 属性，则提供对数据假删除的支持。</param>
+        public void Remove(TEntity entity, bool fake = true)
+        {
+            Guard.ArgumentNull(entity, "entity");
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 将两个实体的位置进行交换，且相关的子实体也跟随移动。
+        /// </summary>
+        /// <param name="entityA">要交换的实体A。</param>
+        /// <param name="entityB">要交换的实体B。</param>
+        public void Swap(TEntity entityA, TEntity entityB)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 将实体在同一层级上进行上移。
+        /// </summary>
+        /// <param name="entity">要移动的实体。</param>
+        public void ShiftUp(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 将实体在同一层级上进行下移。
+        /// </summary>
+        /// <param name="entity">要移动的实体。</param>
+        public void ShiftDown(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 判断两个实体是否具有直属关系。
+        /// </summary>
+        /// <param name="entityA">实体A。</param>
+        /// <param name="entityB">实体B。</param>
+        /// <returns></returns>
+        public bool IsParental(TEntity entityA, TEntity entityB)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 判断两个实体的父子身份。
+        /// </summary>
+        /// <param name="entityA">实体A。</param>
+        /// <param name="entityB">实体B。</param>
+        /// <returns>如果两个实体没有父子关系，则为 0，如果 entityA 是 entityB 的长辈，则为 1，反之为 -1。</returns>
+        public int GetPaternalPosition(TEntity entityA, TEntity entityB)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 判断两个实体是否具有兄弟关系。
+        /// </summary>
+        /// <param name="entityA">实体A。</param>
+        /// <param name="entityB">实体B。</param>
+        /// <returns></returns>
+        public bool IsBrotherly(TEntity entityA, TEntity entityB)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 判断实体是否具有孩子。
+        /// </summary>
+        /// <param name="entity">当前实体。</param>
+        /// <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
+        /// <returns></returns>
+        public bool HasChildren(TEntity entity, Expression<Func<TEntity, bool>> predicate = null)
+        {
+            var expression = builder.BuildHasChildrenExpression(entity, predicate);
+            return (int)repository.Provider.Execute(expression) > 0;
+        }
+
+        /// <summary>
+        /// 查询指定实体的孩子。
+        /// </summary>
+        /// <param name="entity">当前实体。</param>
+        /// <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
+        /// <param name="recurrence">是否递归出所有孩子。</param>
+        /// <returns></returns>
+        public IQueryable<TEntity> QueryChildren(TEntity entity, Expression<Func<TEntity, bool>> predicate = null, bool recurrence = false)
+        {
+            var expression = builder.BuildQueryChildrenExpression(entity, predicate, recurrence);
+            return repository.Provider.CreateQuery<TEntity>(expression);
+        }
+
+        /// <summary>
+        /// 递归返回实体的父亲实体。
+        /// </summary>
+        /// <param name="entity">当前实体。</param>
+        /// <returns></returns>
+        public IQueryable<TEntity> RecurrenceParent(TEntity entity)
+        {
+            var expression = builder.BuildRecurrenceParentExpression(entity);
+            return repository.Provider.CreateQuery<TEntity>(expression);
+        }
+
+        /// <summary>
+        /// 获取上一个兄弟。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public TEntity GetPreviousSibling(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 获取下一个兄弟。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public TEntity GetNextSibling(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected virtual void OnEntityTreeUpdating(EntityTreeUpdatingEventArgs<TEntity> e)
+        {
+            if (EntityTreeUpdating != null)
+            {
+                EntityTreeUpdating(this, e);
+            }
+        }
+
+    }
+
+    /// <summary>
+    /// 树表达式构造器。
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    internal class TreeExpressionBuilder<T> where T : class, IEntity
+    {
+        private static MethodInfo MthLike = typeof(StringExtension).GetMethod("Like", BindingFlags.Public | BindingFlags.Static);
+        private static PropertyInfo ProLength = typeof(string).GetProperty("Length");
+        private static MethodInfo MthCount = typeof(Queryable).GetMethods().FirstOrDefault(s => s.Name == "Count" && s.GetParameters().Length == 2);
+        private static MethodInfo MthOrderByDesc = typeof(Queryable).GetMethods().FirstOrDefault(s => s.Name == "OrderByDescending" && s.GetParameters().Length == 2);
+        private IQueryable<T> query;
+        private EntityTreeMetadata metadata;
+
+        internal TreeExpressionBuilder(IQueryable<T> query, EntityTreeMetadata metadata)
+        {
+            this.query = query;
+            this.metadata = metadata;
+        }
+
+        /// <summary>
+        /// 构造 QueryChildren 方法的查询表达式。
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="predicate"></param>
+        /// <param name="recurrence"></param>
+        /// <returns></returns>
+        internal Expression BuildQueryChildrenExpression(T parent, Expression<Func<T, bool>> predicate, bool recurrence = false)
+        {
+            var parExp = Expression.Parameter(typeof(T), "s");
+            var memberExp = Expression.MakeMemberAccess(parExp, metadata.InnerSign.Info.ReflectionInfo);
+            var no = parent == null ? string.Empty : (string)parent.GetValue(metadata.InnerSign.Name);
+
+            var likeExp = recurrence ? Expression.Constant(string.Concat(no, "%")) :
+                Expression.Constant(string.Concat(no, new string('_', metadata.GetNextLevelLength(no.Length))));
+
+            Expression condition = Expression.Call(null, MthLike, memberExp, likeExp);
+
+            if (predicate != null)
+            {
+                var lambda = GetLambda(predicate);
+                if (lambda != null)
+                {
+                    condition = condition.And(DbExpressionReplacer.Replace(lambda.Body, lambda.Parameters[0], parExp));
+                }
+            }
+
+            return BindWhere(Lambda(condition, parExp));
+        }
+
+        /// <summary>
+        /// 构造 HasChildren 方法的查询表达式。
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        internal Expression BuildHasChildrenExpression(T parent, Expression<Func<T, bool>> predicate)
+        {
+            var parExp = Expression.Parameter(typeof(T), "s");
+            var memberExp = Expression.MakeMemberAccess(parExp, metadata.InnerSign.Info.ReflectionInfo);
+            var no = parent == null ? string.Empty : (string)parent.GetValue(metadata.InnerSign.Name);
+            var condition = (Expression)Expression.Call(null, MthLike, memberExp, Expression.Constant(string.Concat(no, new string('_', metadata.GetNextLevelLength(no.Length)))));
+
+            if (predicate != null)
+            {
+                var lambda = GetLambda(predicate);
+                if (lambda != null)
+                {
+                    condition = condition.And(DbExpressionReplacer.Replace(lambda.Body, lambda.Parameters[0], parExp));
+                }
+            }
+
+            var expression = Lambda(condition, parExp);
+            var mthCount = MthCount.MakeGenericMethod(typeof(T));
+
+            return Expression.Call(mthCount, query.Expression, expression);
+        }
+
+        /// <summary>
+        /// 构造 RecurrenceParent 方法的查询表达式。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        internal Expression BuildRecurrenceParentExpression(T entity)
+        {
+            var parExp = Expression.Parameter(typeof(T), "s");
+            var memberExp = Expression.MakeMemberAccess(parExp, metadata.InnerSign.Info.ReflectionInfo);
+            var no = (string)entity.GetValue(metadata.InnerSign.Name);
+
+            Expression condition = null;
+
+            while (true)
+            {
+                var length = no.Length - metadata.GetCurrentLevelLength(no.Length);
+                if (length <= 0)
+                {
+                    throw new ArgumentException("");
+                }
+
+                no = no.Substring(0, length);
+                if (no.Length == 0)
+                {
+                    break;
+                }
+
+                var equalExp = Expression.Equal(memberExp, Expression.Constant(no));
+                condition = condition == null ? equalExp : Expression.Or(condition, equalExp);
+            }
+
+            var expression = BindWhere(Lambda(condition, parExp));
+            var mthOrder = MthOrderByDesc.MakeGenericMethod(typeof(T), typeof(int));
+
+            var signExp = Expression.Property(parExp, metadata.InnerSign.Info.ReflectionInfo);
+            var lengthExp = Expression.MakeMemberAccess(signExp, ProLength);
+            return Expression.Call(null, mthOrder, new[] { expression, Expression.Lambda(lengthExp, parExp) });
+        }
+
+        private static LambdaExpression GetLambda(Expression e)
+        {
+            while (e.NodeType == ExpressionType.Quote)
+            {
+                e = ((UnaryExpression)e).Operand;
+            }
+            if (e.NodeType == ExpressionType.Constant)
+            {
+                return ((ConstantExpression)e).Value as LambdaExpression;
+            }
+            return e as LambdaExpression;
+        }
+
+        private Expression Lambda(Expression expression, ParameterExpression parExp)
+        {
+            return Expression.Lambda<Func<T, bool>>(expression, parExp);
+        }
+
+        private Expression BindWhere(Expression expression)
+        {
+            var method = typeof(Queryable).GetMethods(BindingFlags.Public | BindingFlags.Static)
+                .FirstOrDefault(s => s.Name == "Where");
+
+            method = method.MakeGenericMethod(typeof(T));
+            return expression = Expression.Call(method, query.Expression, expression);
+        }
+
+    }
+}

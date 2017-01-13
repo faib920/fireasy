@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7F5E55D-9D1E-43A2-9EC0-7770B6AA9D57}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fireasy.Data.Entity</RootNamespace>
+    <AssemblyName>Fireasy.Data.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;N40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Fireasy.Data.Entity.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N35|AnyCPU'">
+    <OutputPath>bin\N35\</OutputPath>
+    <DefineConstants>TRACE;N35</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\N35\Fireasy.Data.Entity.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <DocumentationFile>bin\N35\Fireasy.Data.Entity.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N40|AnyCPU'">
+    <OutputPath>bin\N40\</OutputPath>
+    <DefineConstants>TRACE;N40</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\N40\Fireasy.Data.Entity.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <DocumentationFile>bin\N40\Fireasy.Data.Entity.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N45|AnyCPU'">
+    <OutputPath>bin\N45\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;N45</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\N45\Fireasy.Data.Entity.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <DocumentationFile>bin\N45\Fireasy.Data.Entity.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>../documents/sign/fireasy.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Fireasy.Assembly\__Version.cs">
+      <Link>__Version.cs</Link>
+    </Compile>
+    <Compile Include="DefaultContextProvider.cs" />
+    <Compile Include="IEntityTreePersister.cs" />
+    <Compile Include="Linq\DefaultRepositoryProvider.cs" />
+    <Compile Include="EntityContextTypesInitializersPair.cs" />
+    <Compile Include="EntityOwner.cs" />
+    <Compile Include="EntityPropertyFieldMappingResolver.cs" />
+    <Compile Include="EntityProxy.cs" />
+    <Compile Include="EntityRepository.cs" />
+    <Compile Include="Dynamic\EntityTypeBuilder.cs" />
+    <Compile Include="Dynamic\EntityPersister.cs" />
+    <Compile Include="Dynamic\RelationshipBuilder.cs" />
+    <Compile Include="EntityContext.cs" />
+    <Compile Include="EntityLzayManager.cs" />
+    <Compile Include="EntityTransactionScopeOption.cs" />
+    <Compile Include="EntityRepositoryDiscoveryService.cs" />
+    <Compile Include="EntityTreePersistentHelper.cs" />
+    <Compile Include="EqualityComparer.cs" />
+    <Compile Include="EntityDatabase.cs" />
+    <Compile Include="EntityDatabaseFactory.cs" />
+    <Compile Include="EntityLazyloader.cs" />
+    <Compile Include="EntityLazyloadException.cs" />
+    <Compile Include="EntityPersisterHelper.cs" />
+    <Compile Include="EntityUtility.cs" />
+    <Compile Include="Extensions\NoClass.cs" />
+    <Compile Include="EntityDiscoverAssemblyAttribute.cs" />
+    <Compile Include="IEntityRelation.cs" />
+    <Compile Include="IContextProvider.cs" />
+    <Compile Include="Linq\IRepositoryProvider.cs" />
+    <Compile Include="IQueryProviderAware.cs" />
+    <Compile Include="IEntityCloneable.cs" />
+    <Compile Include="IEntityPropertyInitialize.cs" />
+    <Compile Include="IEntitySetInternalExtension.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="LighEntityInterceptor.cs" />
+    <Compile Include="LighEntityObject.cs" />
+    <Compile Include="Linq\ExecutionBuilder.cs" />
+    <Compile Include="Linq\Expressions\BatchCommandExpression.cs" />
+    <Compile Include="Linq\Expressions\ClientJoinExpression.cs" />
+    <Compile Include="Linq\Expressions\GeneratorExpression.cs" />
+    <Compile Include="Linq\Expressions\NamedValueExpression.cs" />
+    <Compile Include="Linq\Expressions\SqlExpression.cs" />
+    <Compile Include="Linq\Expressions\VariableExpression.cs" />
+    <Compile Include="Linq\InternalContext.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="ILoadedProperty.cs" />
+    <Compile Include="ISavedProperty.cs" />
+    <Compile Include="Linq\Expressions\BlockCommandExpression.cs" />
+    <Compile Include="Linq\Expressions\InsertCommandExpression.cs" />
+    <Compile Include="Linq\Expressions\IdentityCommandExpression.cs" />
+    <Compile Include="Linq\IQueryPolicy.cs" />
+    <Compile Include="Linq\GlobalQueryPolicy.cs" />
+    <Compile Include="Linq\Translators\GlobalQueryPolicyRewriter.cs" />
+    <Compile Include="Linq\Translators\Impl\FirebirdTranslateProvider.cs" />
+    <Compile Include="Linq\Translators\Impl\FirebirdTranslator.cs" />
+    <Compile Include="InterfaceMemberMappingAttribute.cs" />
+    <Compile Include="Linq\Translators\MethodCallBindAttribute.cs" />
+    <Compile Include="Linq\Translators\TranslateUtils.cs" />
+    <Compile Include="Linq\Translators\ClientJoinedProjectionRewriter.cs" />
+    <Compile Include="Linq\Translators\ComparisonRewriter.cs" />
+    <Compile Include="Linq\Translators\CrossJoinIsolator.cs" />
+    <Compile Include="Linq\Translators\CrossJoinRewriter.cs" />
+    <Compile Include="Linq\Translators\DbExpressionWriter.cs" />
+    <Compile Include="Linq\Translators\ExpressionRewriteContainer.cs" />
+    <Compile Include="Linq\Translators\ExpressionRewriterBase.cs" />
+    <Compile Include="Linq\Translators\Extensions.cs" />
+    <Compile Include="Linq\Translators\GroupKeyReplacer.cs" />
+    <Compile Include="Linq\Translators\IMethodCallBinder.cs" />
+    <Compile Include="Linq\Translators\JoinColumnGatherer.cs" />
+    <Compile Include="Linq\Translators\NamedValueGatherer.cs" />
+    <Compile Include="Linq\Translators\Impl\AccessTranslateProvider.cs" />
+    <Compile Include="Linq\Translators\Impl\AccessTranslator.cs" />
+    <Compile Include="Linq\Translators\Parameterizer.cs" />
+    <Compile Include="Linq\Translators\Impl\PostgreSqlTranslateProvider.cs" />
+    <Compile Include="Linq\Translators\Impl\PostgreSqlTranslator.cs" />
+    <Compile Include="Linq\Translators\ReferencedColumnGatherer.cs" />
+    <Compile Include="Linq\Translators\RelationshipIncluder.cs" />
+    <Compile Include="Linq\Translators\SkipToNestedOrderByRewriter.cs" />
+    <Compile Include="Linq\Translators\ThreeTopPagerRewriter.cs" />
+    <Compile Include="Linq\Translators\TranslateScope.cs" />
+    <Compile Include="EntityCompiler.cs" />
+    <Compile Include="Properties\IPropertyLazy.cs" />
+    <Compile Include="Properties\SubqueryProperty.cs" />
+    <Compile Include="IKeepStateCloneable.cs" />
+    <Compile Include="Linq\Translators\CachableChecker.cs" />
+    <Compile Include="Linq\Translators\ColumnMapper.cs" />
+    <Compile Include="Linq\Translators\QueryDuplicator.cs" />
+    <Compile Include="Properties\IPropertyLazyLoadder.cs" />
+    <Compile Include="PrimaryPropertyUpdateException.cs" />
+    <Compile Include="Properties\IPropertyReference.cs" />
+    <Compile Include="Properties\PropertyLazyLoadderAttribute.cs" />
+    <Compile Include="Properties\PropertyLazyLoadderBase.cs" />
+    <Compile Include="Properties\VirtualProperty.cs" />
+    <Compile Include="PropertyMappingAttribte.cs" />
+    <Compile Include="QueryBuilder\EntityLazyloadQueryBuilder.cs" />
+    <Compile Include="EntityMappingAttribute.cs" />
+    <Compile Include="EntityObject.cs" />
+    <Compile Include="EntityObjectReader.cs" />
+    <Compile Include="EntityPersistentEnvironment.cs" />
+    <Compile Include="EntityPersistentException.cs" />
+    <Compile Include="QueryBuilder\EntityPersistentQueryBuilder.cs" />
+    <Compile Include="EntityTransactionScope.cs" />
+    <Compile Include="EntityPersister.cs" />
+    <Compile Include="Properties\EntityProperty.cs" />
+    <Compile Include="QueryBuilder\EntityQueryBuilder.cs" />
+    <Compile Include="QueryBuilder\EntityQueryContext.cs" />
+    <Compile Include="EntityRowMapper.cs" />
+    <Compile Include="EntitySet.cs" />
+    <Compile Include="Properties\EntitySetProperty.cs" />
+    <Compile Include="EntityState.cs" />
+    <Compile Include="EntityTreeFieldTypeException.cs" />
+    <Compile Include="EntityTreeMappingAttribute.cs" />
+    <Compile Include="EntityTreeUpdatingBag.cs" />
+    <Compile Include="EntityTreePersistentException.cs" />
+    <Compile Include="EntityTreePersister.cs" />
+    <Compile Include="EntityTreePosition.cs" />
+    <Compile Include="EntityTreeRequiredFieldException.cs" />
+    <Compile Include="EntityTreeUpdatingAction.cs" />
+    <Compile Include="EntityTreeUpdatingEventArgs.cs" />
+    <Compile Include="EntityTreeUpdatingEventHandler.cs" />
+    <Compile Include="EntityEntry.cs" />
+    <Compile Include="EntityEntryDictionary.cs" />
+    <Compile Include="PropertyValue.cs" />
+    <Compile Include="PropertyValueHelper.cs" />
+    <Compile Include="EntityVariableAttribute.cs" />
+    <Compile Include="Properties\EnumProperty.cs" />
+    <Compile Include="EntityExtension.cs" />
+    <Compile Include="EnumerableExtension.cs" />
+    <Compile Include="GenericExtension.cs" />
+    <Compile Include="Properties\GeneralProperty.cs" />
+    <Compile Include="IdentityGenerateType.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IEntityPersistentEnvironment.cs" />
+    <Compile Include="IEntityPersistentInstanceContainer.cs" />
+    <Compile Include="IEntityPropertyAccessor.cs" />
+    <Compile Include="IEntityStatefulExtension.cs" />
+    <Compile Include="IEntitySet.cs" />
+    <Compile Include="IProperty.cs" />
+    <Compile Include="Linq\EntityQueryProvider.cs" />
+    <Compile Include="Linq\Expressions\AggregateExpression.cs" />
+    <Compile Include="Linq\Expressions\AggregateSubqueryExpression.cs" />
+    <Compile Include="Linq\Expressions\AggregateType.cs" />
+    <Compile Include="Linq\Expressions\AliasedExpression.cs" />
+    <Compile Include="Linq\Expressions\BetweenExpression.cs" />
+    <Compile Include="Linq\Expressions\ColumnDeclaration.cs" />
+    <Compile Include="Linq\Expressions\ColumnExpression.cs" />
+    <Compile Include="Linq\Expressions\ColumnAssignment.cs" />
+    <Compile Include="Linq\Expressions\CommandExpression.cs" />
+    <Compile Include="Linq\Expressions\DbExpression.cs" />
+    <Compile Include="Linq\Expressions\DbExpressionExtensions.cs" />
+    <Compile Include="Linq\Expressions\DbExpressionType.cs" />
+    <Compile Include="Linq\Expressions\DbExpressionVisitor.cs" />
+    <Compile Include="Linq\Expressions\DeleteCommandExpression.cs" />
+    <Compile Include="Linq\Expressions\EntityExpression.cs" />
+    <Compile Include="Linq\Expressions\ExistsExpression.cs" />
+    <Compile Include="Linq\Expressions\ExpressionComparer.cs" />
+    <Compile Include="Linq\Expressions\FunctionExpression.cs" />
+    <Compile Include="Linq\Expressions\InExpression.cs" />
+    <Compile Include="Linq\Expressions\IsNullExpression.cs" />
+    <Compile Include="Linq\Expressions\JoinExpression.cs" />
+    <Compile Include="Linq\Expressions\JoinType.cs" />
+    <Compile Include="Linq\Expressions\OrderExpression.cs" />
+    <Compile Include="Linq\Expressions\OrderType.cs" />
+    <Compile Include="Linq\Expressions\OuterJoinedExpression.cs" />
+    <Compile Include="Linq\Expressions\ProjectionExpression.cs" />
+    <Compile Include="Linq\Expressions\RowNumberExpression.cs" />
+    <Compile Include="Linq\Expressions\ScalarExpression.cs" />
+    <Compile Include="Linq\Expressions\ScopedDictionary.cs" />
+    <Compile Include="Linq\Expressions\SegmentExpression.cs" />
+    <Compile Include="Linq\Expressions\SelectExpression.cs" />
+    <Compile Include="Linq\Expressions\SubqueryExpression.cs" />
+    <Compile Include="Linq\Expressions\TableAlias.cs" />
+    <Compile Include="Linq\Expressions\TableExpression.cs" />
+    <Compile Include="Linq\Expressions\UpdateCommandExpression.cs" />
+    <Compile Include="Linq\Extensions.cs" />
+    <Compile Include="Linq\Grouping.cs" />
+    <Compile Include="Linq\IEntityQueryProvider.cs" />
+    <Compile Include="Linq\QueryProvider.cs" />
+    <Compile Include="Linq\QuerySet.cs" />
+    <Compile Include="Linq\Translators\AggregateChecker.cs" />
+    <Compile Include="Linq\Translators\AggregateRewriter.cs" />
+    <Compile Include="Linq\Translators\TranslateProviderBase.cs" />
+    <Compile Include="Linq\Translators\TranslatorBase.cs" />
+    <Compile Include="Linq\Translators\ColumnProjector.cs" />
+    <Compile Include="Linq\Translators\Configuration\TranslatorConfigurationSection.cs" />
+    <Compile Include="Linq\Translators\Configuration\TranslatorConfigurationSectionHandler.cs" />
+    <Compile Include="Linq\Translators\CrossApplyRewriter.cs" />
+    <Compile Include="Linq\Translators\DbExpressionComparer.cs" />
+    <Compile Include="Linq\Translators\DbExpressionReplacer.cs" />
+    <Compile Include="Linq\Translators\DeclaredAliasGatherer.cs" />
+    <Compile Include="Linq\Translators\LogicalDeleteFlagRewriter.cs" />
+    <Compile Include="Linq\Translators\Indentation.cs" />
+    <Compile Include="Linq\Translators\ITranslateProvider.cs" />
+    <Compile Include="Linq\Translators\ITranslateSupport.cs" />
+    <Compile Include="Linq\Translators\Impl\MsSqlTranslateProvider.cs" />
+    <Compile Include="Linq\Translators\Impl\MsSqlTranslator.cs" />
+    <Compile Include="Linq\Translators\Impl\MySqlTranslateProvider.cs" />
+    <Compile Include="Linq\Translators\Impl\MySqlTranslator.cs" />
+    <Compile Include="Linq\Translators\Impl\OracleTranslateProvider.cs" />
+    <Compile Include="Linq\Translators\Impl\OracleTranslator.cs" />
+    <Compile Include="Linq\Translators\OrderByRewriter.cs" />
+    <Compile Include="Linq\Translators\ParameterRewriter.cs" />
+    <Compile Include="Linq\Translators\ProjectedColumns.cs" />
+    <Compile Include="Linq\Translators\QueryBinder.cs" />
+    <Compile Include="Linq\Translators\QueryUtility.cs" />
+    <Compile Include="Linq\Translators\RedundantColumnRemover.cs" />
+    <Compile Include="Linq\Translators\RedundantJoinRemover.cs" />
+    <Compile Include="Linq\Translators\RedundantSubqueryRemover.cs" />
+    <Compile Include="Linq\Translators\ReferencedAliasGatherer.cs" />
+    <Compile Include="Linq\Translators\RelationshipBinder.cs" />
+    <Compile Include="Linq\Translators\SelectGatherer.cs" />
+    <Compile Include="Linq\Translators\SingletonProjectionRewriter.cs" />
+    <Compile Include="Linq\Translators\SkipToRowNumberRewriter.cs" />
+    <Compile Include="Linq\Translators\Impl\SQLiteTranslateProvider.cs" />
+    <Compile Include="Linq\Translators\Impl\SQLiteTranslator.cs" />
+    <Compile Include="Linq\Translators\SubqueryRemover.cs" />
+    <Compile Include="Linq\Translators\TranslateException.cs" />
+    <Compile Include="Linq\Translators\TranslateOptions.cs" />
+    <Compile Include="Linq\Translators\TranslateResult.cs" />
+    <Compile Include="Linq\Translators\TranslateResultType.cs" />
+    <Compile Include="Linq\Translators\UnusedColumnRemover.cs" />
+    <Compile Include="LoadBehavior.cs" />
+    <Compile Include="Metadata\EntityMetadata.cs" />
+    <Compile Include="Metadata\EntityMetadataUnity.cs" />
+    <Compile Include="Metadata\EntityTreeMetadata.cs" />
+    <Compile Include="Metadata\EntityTypeInvalidException.cs" />
+    <Compile Include="Metadata\RelationshipMetadata.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyChangedEventArgs.cs" />
+    <Compile Include="PropertyChangingEventArgs.cs" />
+    <Compile Include="PropertyEqualityComparer.cs" />
+    <Compile Include="PropertyMapInfo.cs" />
+    <Compile Include="PropertyMapping.cs" />
+    <Compile Include="PropertyNotFoundException.cs" />
+    <Compile Include="PropertyUnity.cs" />
+    <Compile Include="Properties\ReferenceProperty.cs" />
+    <Compile Include="RelationOptions.cs" />
+    <Compile Include="Properties\RelationProperty.cs" />
+    <Compile Include="Properties\RelationPropertyType.cs" />
+    <Compile Include="RelationshipAttribute.cs" />
+    <Compile Include="RelationshipStyle.cs" />
+    <Compile Include="RelationshipException.cs" />
+    <Compile Include="RelationshipKey.cs" />
+    <Compile Include="RelationshipUnity.cs" />
+    <Compile Include="RowMapperFactory.cs" />
+    <Compile Include="SR.cs" />
+    <Compile Include="Subscribes\EntityPersistentEventType.cs" />
+    <Compile Include="Subscribes\EntityPersistentSubject.cs" />
+    <Compile Include="Subscribes\EntityPersistentSubscribePublisher.cs" />
+    <Compile Include="Subscribes\EntityPersistentSubscriber.cs" />
+    <Compile Include="UnrealEntityObject.cs" />
+    <Compile Include="Validation\EntityInvalidateException.cs" />
+    <Compile Include="Validation\MetadataContainer.cs" />
+    <Compile Include="Validation\IPropertyMarker.cs" />
+    <Compile Include="Validation\PropertyInvalidateException.cs" />
+    <Compile Include="Validation\UniqueCodeAttribute.cs" />
+    <Compile Include="Validation\ValidationAttribute.cs" />
+    <Compile Include="Validation\ValidationContext.cs" />
+    <Compile Include="Validation\ValidationResult.cs" />
+    <Compile Include="Validation\ValidationUnity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SR.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fireasy.Common\Fireasy.Common.csproj">
+      <Project>{0DB77BAB-B4FB-40C6-A2EF-2BE8A4D69884}</Project>
+      <Name>Fireasy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fireasy.Data\Fireasy.Data.csproj">
+      <Project>{28AED611-D2E8-4CE9-BC30-FAF5B8FF0EFC}</Project>
+      <Name>Fireasy.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

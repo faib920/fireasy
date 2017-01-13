@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB706435-99D5-4518-8419-E549B2FA6312}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fireasy.Web</RootNamespace>
+    <AssemblyName>Fireasy.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;N40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Fireasy.Web.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N35|AnyCPU'">
+    <OutputPath>bin\N35\</OutputPath>
+    <DefineConstants>TRACE;N35</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\N35\Fireasy.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <DocumentationFile>bin\N35\Fireasy.Web.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N40|AnyCPU'">
+    <OutputPath>bin\N40\</OutputPath>
+    <DefineConstants>TRACE;N40</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\N40\Fireasy.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <DocumentationFile>bin\N40\Fireasy.Web.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N45|AnyCPU'">
+    <OutputPath>bin\N45\</OutputPath>
+    <DefineConstants>TRACE;N45</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\N45\Fireasy.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <DocumentationFile>bin\N45\Fireasy.Web.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>../documents/sign/fireasy.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Fireasy.Assembly\__Version.cs">
+      <Link>__Version.cs</Link>
+    </Compile>
+    <Compile Include="Http\Definitions\ActionDescriptor.cs" />
+    <Compile Include="Http\Filters\ActionExecutingContext.cs" />
+    <Compile Include="Http\Filters\ActionExecutedContext.cs" />
+    <Compile Include="Http\Filters\ActionFilterAttribute.cs" />
+    <Compile Include="Http\FriendlyNameAttribute.cs" />
+    <Compile Include="Http\Filters\AllowAnonymousAttribute.cs" />
+    <Compile Include="Http\Definitions\AspPageServiceFactory.cs" />
+    <Compile Include="Http\Assistants\CodeGeneratorBase.cs" />
+    <Compile Include="Http\Assistants\CSharpCodeGenerator.cs" />
+    <Compile Include="Http\Assistants\DefinitionLanguageAction.cs" />
+    <Compile Include="Http\Assistants\DefinitionLanguageFormatter.cs" />
+    <Compile Include="Http\Assistants\HtmlDocFormatter.cs" />
+    <Compile Include="Http\Assistants\IDescriptorTextFormatter.cs" />
+    <Compile Include="Http\Assistants\JavaCodeGenerator.cs" />
+    <Compile Include="Http\Assistants\JavascriptCodeGenerator.cs" />
+    <Compile Include="Http\Assistants\VBCodeGenerator.cs" />
+    <Compile Include="Http\Definitions\DescriptorUtil.cs" />
+    <Compile Include="Http\Assistants\GenerateCodeAction.cs" />
+    <Compile Include="Http\Assistants\HelpDocumentAction.cs" />
+    <Compile Include="Http\FilterAttributeCollection.cs" />
+    <Compile Include="Http\IServiceAssistant.cs" />
+    <Compile Include="Http\Filters\AuthorizationContext.cs" />
+    <Compile Include="Http\Filters\AuthorizeAttribute.cs" />
+    <Compile Include="Http\ContentTypeAttribute.cs" />
+    <Compile Include="Http\Definitions\ActionInvokerBase.cs" />
+    <Compile Include="Http\Definitions\DefaultResultWriter.cs" />
+    <Compile Include="Http\ExceptionBehaviorAttribute.cs" />
+    <Compile Include="Http\Filters\ExceptionActionFilterAttribute.cs" />
+    <Compile Include="Http\Filters\FilterAttribute.cs" />
+    <Compile Include="Http\HttpConfiguration.cs" />
+    <Compile Include="Http\HttpRoute.cs" />
+    <Compile Include="Http\HttpServiceException.cs" />
+    <Compile Include="Http\Filters\IActionFilter.cs" />
+    <Compile Include="Http\Definitions\IActionInvoker.cs" />
+    <Compile Include="Http\Filters\IAuthorizationFilter.cs" />
+    <Compile Include="Http\Definitions\IResultWriter.cs" />
+    <Compile Include="Http\UnexposedActionFilterAttribute.cs" />
+    <Compile Include="Http\Definitions\ParameterDescriptor.cs" />
+    <Compile Include="Http\Definitions\ReflectionParameterDescriptor.cs" />
+    <Compile Include="Http\Result.cs" />
+    <Compile Include="Http\ServiceAttribute.cs" />
+    <Compile Include="Http\ServiceContext.cs" />
+    <Compile Include="Http\Definitions\ReflectionActionDescriptor.cs" />
+    <Compile Include="Http\Definitions\ReflectionServiceDescriptor.cs" />
+    <Compile Include="Http\Definitions\ServiceDescriptor.cs" />
+    <Compile Include="Http\HttpHandler.cs" />
+    <Compile Include="Http\Definitions\ReflectionActionInvoker.cs" />
+    <Compile Include="Http\Definitions\ReflectionServiceFactory.cs" />
+    <Compile Include="Http\IHttpService.cs" />
+    <Compile Include="Http\Definitions\IServiceFactory.cs" />
+    <Compile Include="Http\Definitions\MEFServiceFactory.cs" />
+    <Compile Include="Http\Definitions\ParamsGatherAttribute.cs" />
+    <Compile Include="Caching\WebCacheManager.cs" />
+    <Compile Include="Configuration\BundleGroupConfigurationSection.cs" />
+    <Compile Include="Configuration\BundleGroupConfigurationSectionHandler.cs" />
+    <Compile Include="Configuration\BundleGroupConfigurationSetting.cs" />
+    <Compile Include="ContentType.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionStateAttribute.cs" />
+    <Compile Include="UI\CheckBoxExtensions.cs" />
+    <Compile Include="UI\CssDocument.cs" />
+    <Compile Include="UI\HiddenExtensions.cs" />
+    <Compile Include="UI\HtmlHelper.cs" />
+    <Compile Include="UI\EventFunctionAttribute.cs" />
+    <Compile Include="UI\InputExtensions.cs" />
+    <Compile Include="UI\ISettingsBindable.cs" />
+    <Compile Include="UI\ISettingsBinder.cs" />
+    <Compile Include="UI\LabelExtensions.cs" />
+    <Compile Include="UI\ModelPropertyBinder.cs" />
+    <Compile Include="UI\RadioExtensions.cs" />
+    <Compile Include="UI\RadioGroupSettings.cs" />
+    <Compile Include="UI\SettingsBindManager.cs" />
+    <Compile Include="UI\SettingsBase.cs" />
+    <Compile Include="UI\SettingsSerializer.cs" />
+    <Compile Include="UI\TagBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fireasy.Common\Fireasy.Common.csproj">
+      <Project>{0DB77BAB-B4FB-40C6-A2EF-2BE8A4D69884}</Project>
+      <Name>Fireasy.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

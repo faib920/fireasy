@@ -1,0 +1,159 @@
+﻿
+@{
+// ------------------------------
+// 本模块由CodeBuilder工具生成
+// 版权所有 (C) Fireasy 2014
+// 
+// 模块名称: 员工列表视图
+// 代码编写: Huangxd
+// 创建时间: 2015/5/18 16:08:24
+// ------------------------------
+}
+@{
+    ViewBag.Title = "Employee管理";
+    Layout = "~/Views/Shared/_EasyUILayout.cshtml";
+}
+
+    <script type="text/javascript">
+        $(function () {
+            loadDepts();
+            loadData();
+        })
+
+        function loadDepts() {
+            $('#treDept').tree({
+                url: '../Dept/Data',
+                onClick: function (node) {
+                    $('#dgEmp').datagrid({
+                        queryParams: { deptNo: node.attributes.no }
+                    });
+                }
+            })
+        }
+
+        //加载数据
+        function loadData() {
+            $('#dgEmp').datagrid({
+                url: 'Data',
+                fit: true,//自动填充
+                singleSelect: true,//单选
+                pagination: true,//分页信息
+                rownumbers: true,//显示行号
+                pageNumber: 1,//默认显示第一页
+                pageSize:20,//每页的行数
+                idField: 'Id',
+                columns: [[
+                    
+                    { field: 'No', title: '编号', width: 150, halign: 'center', align: 'left', sortable: true },
+                    { field: 'SexText', title: '性别', width: 150, halign: 'center', align: 'left', sortable: true },
+                    { field: 'Name', title: '姓名', width: 150, halign: 'center', align: 'left', sortable: true },
+                    { field: 'Birthday', title: '出生日期', width: 150, halign: 'center', align: 'left', sortable: true },
+                    { field: 'Post', title: '职务', width: 150, halign: 'center', align: 'left', sortable: true },
+                    { field: 'Mobile', title: '手机号码', width: 150, halign: 'center', align: 'left', sortable: true },
+                    { field: 'Address', title: '家庭住址', width: 150, halign: 'center', align: 'left', sortable: true },
+                    { field: 'Description', title: '个人说明', width: 150, halign: 'center', align: 'left', sortable: true }
+                ]],
+                onDblClickRow: function () {
+                    if ($('a[key="edit"]').length == 1) {
+                        editInfo();
+                    }
+                }
+            })
+        }
+
+        //工具栏单击事件
+        function toolbarClick(key) {
+            switch (key) {
+                case "add":
+                    addInfo();
+                    break;
+                case "edit":
+                    editInfo();
+                    break;
+                case "delete":
+                    deleteInfo();
+                    break;
+            }
+        }
+
+        //添加信息
+        function addInfo() {
+            var node = $('#treDept').tree('getSelected');
+            var deptId = node == null ? '' : node.id;
+            common.showDialog('Edit?deptId=' + deptId, '员工', 700, 400, function () {
+                $('#dgEmp').datagrid('reload');
+            });
+        }
+
+        //修改信息
+        function editInfo() {
+            var row = $('#dgEmp').datagrid('getSelected');
+            if (row == null) {
+                common.alert('请先选择一条记录。');
+                return;
+            }
+
+            common.showDialog('Edit?id=' + row.Id, '员工', 700, 400, function () {
+                $('#dgEmp').datagrid('reload');
+            });
+        }
+
+        //删除信息
+        function deleteInfo() {
+            var row = $('#dgEmp').datagrid('getSelected');
+            if (row == null) {
+                common.alert('请先选择一条记录。');
+                return;
+            }
+
+            common.confirm('你确认要删除该信息吗?', function () {
+                $.post('Delete?id=' + row.Id, null, function (result) {
+                    common.processResult(result, function () {
+                        $('#dgEmp').datagrid('reload');
+                    });
+                });
+            });
+        }
+
+        //查询
+        function query() {
+            $('#dgEmp').datagrid('unselectAll');
+            $('#dgEmp').datagrid({
+                queryParams: {
+                    keyword: $('#txtKeyword').val()
+                }
+            });
+        }
+        </script>
+        <div data-options="region:'center',border:true" title="员工管理">
+            <div class="easyui-layout" data-options="fit:true" style="width: 100%; height: 100%">
+                <div data-options="region:'north',border:false">
+                    <div class="datagrid-toolbar">
+                        <a class="easyui-linkbutton" onclick="addInfo()" key="add" data-options="iconCls:'icon-add',plain:true">添加</a>
+                        <a class="easyui-linkbutton" onclick="editInfo()" key="edit" data-options="iconCls:'icon-edit',plain:true">修改</a>
+                        <a class="easyui-linkbutton" onclick="deleteInfo()" key="delete" data-options="iconCls:'icon-remove',plain:true">删除</a>
+                    </div>
+                    <div class="query">
+                        <table>
+                            <tr>
+                                <td>快速查询</td>
+                                <td>
+                                    <input id="txtKeyword" type="text" class="easyui-textbox enterQuery" data-options="prompt:'名称或拼音首字母'" style="width: 160px" /></td>
+                                <td><a class="easyui-linkbutton" onclick="query()" data-options="iconCls:'icon-search'">查询</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div data-options="region:'center',border:false">
+                    <div class="easyui-layout" data-options="fit:true,border:false">
+                        <div data-options="region:'west'" style="width:260px">
+                            <div id="treDept"></div>
+                        </div>
+                        <div data-options="region:'center'">
+                            <table id="dgEmp"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

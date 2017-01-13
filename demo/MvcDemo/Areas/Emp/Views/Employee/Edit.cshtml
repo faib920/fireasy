@@ -1,0 +1,117 @@
+﻿
+
+@model Demo.Data.Model.Employee
+@{
+// ------------------------------
+// 本模块由CodeBuilder工具生成
+// 版权所有 (C) Fireasy 2014
+// 
+// 模块名称: 员工编辑视图
+// 代码编写: Huangxd
+// 创建时间: 2015/5/18 16:08:24
+// ------------------------------
+}
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Views/Shared/_EasyUILayout.cshtml";
+}
+@Fireasy.Utilities.Web.BundleHelper.Render("chart", "upload")
+    <script type="text/javascript">
+        var id = '@Request.QueryString["id"]';
+        var deptId = '@Request.QueryString["deptId"]';
+        $(function () {
+            loadInfo();
+        });
+
+        function loadDepts() {
+            $('#cboDeptId').combotree({
+                url: '../Dept/Data?targetId=' + deptId,
+                onLoadSuccess: function () {
+                    $('#cboDeptId').combotree('setValue', deptId);
+                }
+            })
+        }
+
+        //加载信息
+        function loadInfo() {
+            if (id != '') {
+                $.getJSON('Get?id=' + id, function (data) {
+                    common.processResult(data, function () {
+                        $('#form1').form('load', data);
+                        deptId = data.DeptId;
+                        loadDepts();
+                    });
+                });
+
+                $('#btnSaveAndNew').remove();
+            }
+            else {
+                loadDepts();
+            }
+        }
+
+        //保存信息
+        function saveInfo(isNew) {
+            if (!$('#form1').form('validate')) {
+                return;
+            }
+
+            var postData = new Object();
+
+            //将表单填充的内容序列化为json
+            var data = $('#form1').form('save');
+            postData["info"] = JSON.stringify(data);
+
+            common.showProcess();
+            $.post('Save?id=' + id, postData, function (result) {
+                common.processResult(result, function () {
+                    if (isNew) {
+                        $('#form1').form('clear');
+                    }
+
+                    id = isNew ? '' : result.data;
+                    common.setReturnValue(true);
+                });
+            });
+        }
+    </script>
+    <div data-options="region:'center',border:false">
+        <table class="form-body">
+            
+            <tr>
+                <td class="addon">所属部门</td>
+                <td colspan="3">@Html.ComboTree(s => s.DeptId).Style("width:440px").MarkNoClear()</td>
+            </tr>
+            <tr>
+                <td class="addon">编号</td>
+                <td>@Html.TextBox(s => s.No, new TextBoxSettings { Editable = false })</td>
+                <td class="addon">性别</td>
+                <td>@Html.ComboBox(s => s.Sex, typeof(Demo.Data.Model.Sex))</td>
+            </tr>
+            <tr>
+                <td class="addon">姓名</td>
+                <td>@Html.TextBox(s => s.Name)</td>
+                <td class="addon">出生日期</td>
+                <td>@Html.DateBox(s => s.Birthday, new DateBoxSettings { DateValue = DateTime.Today })</td>
+            </tr>
+            <tr>
+                <td class="addon">职务</td>
+                <td>@Html.TextBox(s => s.Post)</td>
+                <td class="addon">手机号码</td>
+                <td>@Html.TextBox(s => s.Mobile)</td>
+            </tr>
+            <tr>
+                <td class="addon">家庭住址</td>
+                <td colspan="3">@Html.TextBox(s => s.Address).Style("width:440px")</td>
+            </tr>
+            <tr>
+                <td class="addon">个人说明</td>
+                <td colspan="3">@Html.TextMultiBox(s => s.Description).Style("width:440px")</td>
+            </tr>
+        </table>
+    </div>
+    <div data-options="region:'south',border:false" class="form-button">
+        <a class="easyui-linkbutton" onclick="saveInfo()" id="btnSave" data-options="iconCls:'icon-save'">保存</a>
+        <a class="easyui-linkbutton" onclick="saveInfo(true)" id="btnSaveAndNew" data-options="iconCls:'icon-save'">保存并新建</a>
+        <a class="easyui-linkbutton" onclick="common.closeWindow()" id="btnClose" data-options="iconCls:'icon-cancel'">关闭</a>
+    </div>

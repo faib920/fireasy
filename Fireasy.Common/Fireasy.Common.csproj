@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0DB77BAB-B4FB-40C6-A2EF-2BE8A4D69884}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fireasy.Common</RootNamespace>
+    <AssemblyName>Fireasy.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;N40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Fireasy.Common.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N35|AnyCPU'">
+    <OutputPath>bin\N35\</OutputPath>
+    <DefineConstants>TRACE;N35</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\N35\Fireasy.Common.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <DocumentationFile>bin\N35\Fireasy.Common.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N40|AnyCPU'">
+    <OutputPath>bin\N40\</OutputPath>
+    <DefineConstants>TRACE;N40;DYNAMIC</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\N40\Fireasy.Common.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <DocumentationFile>bin\N40\Fireasy.Common.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'N45|AnyCPU'">
+    <OutputPath>bin\N45\</OutputPath>
+    <DefineConstants>TRACE;N45;DYNAMIC</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\N45\Fireasy.Common.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <DocumentationFile>bin\N45\Fireasy.Common.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>../documents/sign/fireasy.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Fireasy.Assembly\__Version.cs">
+      <Link>__Version.cs</Link>
+    </Compile>
+    <Compile Include="AOP\AspectException.cs" />
+    <Compile Include="AOP\AspectFactory.cs" />
+    <Compile Include="AOP\InterceptBuildOption.cs" />
+    <Compile Include="AOP\IAopImplement.cs" />
+    <Compile Include="AOP\IAopSupport.cs" />
+    <Compile Include="AOP\IInterceptor.cs" />
+    <Compile Include="AOP\InterceptAttribute.cs" />
+    <Compile Include="AOP\InterceptBuilder.cs" />
+    <Compile Include="AOP\InterceptCache.cs" />
+    <Compile Include="AOP\InterceptCallInfo.cs" />
+    <Compile Include="AOP\InterceptContext.cs" />
+    <Compile Include="AOP\InterceptType.cs" />
+    <Compile Include="Caching\CacheException.cs" />
+    <Compile Include="Caching\MemoryCacheManager.cs" />
+    <Compile Include="Caching\OnceTime.cs" />
+    <Compile Include="ClientNotificationException.cs" />
+    <Compile Include="Compiler\CodeCompiler.cs" />
+    <Compile Include="Compiler\CodeCompilerException.cs" />
+    <Compile Include="ComponentModel\IPaginalResult.cs" />
+    <Compile Include="ComponentModel\ITreeNode.cs" />
+    <Compile Include="ComponentModel\TypeDescriptorUtility.cs" />
+    <Compile Include="Composition\AssemblyDirectoryCatalog.cs" />
+    <Compile Include="Composition\ConfigurationCatalog.cs" />
+    <Compile Include="Composition\Configuration\ImportConfigurationSection.cs" />
+    <Compile Include="Composition\Configuration\ImportConfigurationSectionHandler.cs" />
+    <Compile Include="Composition\Configuration\ImportConfigurationSetting.cs" />
+    <Compile Include="Composition\ConventionalCatalog.cs" />
+    <Compile Include="Composition\DefaultImportAttribute.cs" />
+    <Compile Include="Composition\FilterCompositionContainer.cs" />
+    <Compile Include="Composition\Imports.cs" />
+    <Compile Include="Composition\SingleCompositionContainer.cs" />
+    <Compile Include="ComponentModel\DynamicObjectTypeDescriptionProvider.cs" />
+    <Compile Include="ComponentModel\DynamicTypeDescriptor.cs" />
+    <Compile Include="Configuration\IManagedFactory.cs" />
+    <Compile Include="Configuration\IniManager.cs" />
+    <Compile Include="Drawing\CompressFormat.cs" />
+    <Compile Include="Drawing\ImageDigitization.cs" />
+    <Compile Include="Drawing\ThumbnailStyle.cs" />
+    <Compile Include="Dynamic\DynamicDelegate.cs" />
+    <Compile Include="Dynamic\DynamicManager.cs" />
+    <Compile Include="Dynamic\DynamicExpandoObject.cs" />
+    <Compile Include="Dynamic\BinderWrapper.cs" />
+    <Compile Include="Dynamic\NoThrowExpressionVisitor.cs" />
+    <Compile Include="Dynamic\NoThrowGetBinderMember.cs" />
+    <Compile Include="Dynamic\NoThrowSetBinderMember.cs" />
+    <Compile Include="Emit\CallingDecoration.cs" />
+    <Compile Include="Emit\DynamicAssemblyBuilder.cs" />
+    <Compile Include="Emit\DynamicBuilder.cs" />
+    <Compile Include="Emit\DynamicConstructorBuilder.cs" />
+    <Compile Include="Emit\DynamicEnumBuilder.cs" />
+    <Compile Include="Emit\DynamicFieldBuilder.cs" />
+    <Compile Include="Emit\DynamicInterfaceBuilder.cs" />
+    <Compile Include="Emit\DynamicMethodBuilder.cs" />
+    <Compile Include="Emit\DynamicPropertyBuilder.cs" />
+    <Compile Include="Emit\DynamicTypeBuilder.cs" />
+    <Compile Include="Emit\BuildContext.cs" />
+    <Compile Include="Emit\EmitHelper.cs" />
+    <Compile Include="Emit\ITypeCreator.cs" />
+    <Compile Include="Emit\VisualDecoration.cs" />
+    <Compile Include="Extensions\ImageExtensions.cs" />
+    <Compile Include="Extensions\ByteArrayExtensions.cs" />
+    <Compile Include="Extensions\CharExtension.cs" />
+    <Compile Include="Extensions\ComponentExtensions.cs" />
+    <Compile Include="Extensions\DynamicExtensions.cs" />
+    <Compile Include="Extensions\ExpressionExtensions.cs" />
+    <Compile Include="Extensions\StreamExtensions.cs" />
+    <Compile Include="Extensions\TreeNodeExtensions.cs" />
+    <Compile Include="ComponentModel\ILazyManager.cs" />
+    <Compile Include="IOC\Configuration\ContainerConfigurationSection.cs" />
+    <Compile Include="IOC\Configuration\ContainerConfigurationSectionHandler.cs" />
+    <Compile Include="IOC\Configuration\ContainerConfigurationSetting.cs" />
+    <Compile Include="IOC\Configuration\RegistrationSetting.cs" />
+    <Compile Include="IOC\Container.cs" />
+    <Compile Include="IOC\ContainerOptions.cs" />
+    <Compile Include="IOC\ContainerUnity.cs" />
+    <Compile Include="IOC\Helpers.cs" />
+    <Compile Include="IOC\IgnoreInjectPropertyAttribute.cs" />
+    <Compile Include="IOC\InstanceInitializer.cs" />
+    <Compile Include="IOC\IRegistration.cs" />
+    <Compile Include="IOC\Registrations\AbstractRegistration.cs" />
+    <Compile Include="IOC\Registrations\ConcreteTransientRegistration.cs" />
+    <Compile Include="IOC\Registrations\FuncRegistration.cs" />
+    <Compile Include="IOC\Registrations\SingletonRegistration.cs" />
+    <Compile Include="IOC\Registrations\TransientRegistration.cs" />
+    <Compile Include="ComponentModel\IPager.cs" />
+    <Compile Include="Linq\Expressions\PartialEvaluator.cs" />
+    <Compile Include="Linq\Expressions\ExpressionReplacer.cs" />
+    <Compile Include="Linq\Expressions\ExpressionWriter.cs" />
+    <Compile Include="Localization\ResCategoryAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationSettingIgnoreAttribute.cs" />
+    <Compile Include="EnumDescriptionAttribute.cs" />
+    <Compile Include="AssertFlag.cs" />
+    <Compile Include="Caching\AbsoluteTime.cs" />
+    <Compile Include="Caching\CacheController.cs" />
+    <Compile Include="Caching\CacheItem.cs" />
+    <Compile Include="Caching\CacheItemRemovedCallback.cs" />
+    <Compile Include="Caching\CacheManagerFactory.cs" />
+    <Compile Include="Caching\Configuration\CachingConfigurationSection.cs" />
+    <Compile Include="Caching\Configuration\CachingConfigurationSectionHandler.cs" />
+    <Compile Include="Caching\Configuration\CachingConfigurationSetting.cs" />
+    <Compile Include="Caching\FileDependency.cs" />
+    <Compile Include="Caching\ICacheItemEnumerator.cs" />
+    <Compile Include="Caching\ICacheItemExpiration.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Caching\NeverExpired.cs" />
+    <Compile Include="Caching\RelativeTime.cs" />
+    <Compile Include="Guard.cs" />
+    <Compile Include="Configuration\ConfigurationSectionStorageAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationSettingAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationSettingParseTypeAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationUnity.cs" />
+    <Compile Include="Configuration\ConfigurationSection.cs" />
+    <Compile Include="Configuration\ConfigurationSectionHandler.cs" />
+    <Compile Include="Configuration\ConfigurationSettings.cs" />
+    <Compile Include="Configuration\IConfigurationSection.cs" />
+    <Compile Include="Configuration\IConfigurationSettingHostService.cs" />
+    <Compile Include="Configuration\IConfigurationSettingItem.cs" />
+    <Compile Include="Configuration\IConfigurationSettingParseHandler.cs" />
+    <Compile Include="Configuration\InvalidInstanceWrap.cs" />
+    <Compile Include="MethodCall.cs" />
+    <Compile Include="N35\ConcurrentDictionary.cs" />
+    <Compile Include="N35\Lazy.cs" />
+    <Compile Include="N35\ObservableCollection.cs" />
+    <Compile Include="N35\PlatformHelper.cs" />
+    <Compile Include="N35\Tuple.cs" />
+    <Compile Include="N35\Volatile.cs" />
+    <Compile Include="ReadWriteLocker.cs" />
+    <Compile Include="ObjectReader.cs" />
+    <Compile Include="Reflection\ConstructorInvoker.cs" />
+    <Compile Include="Reflection\FieldAccessor.cs" />
+    <Compile Include="Reflection\InvokerBuilder.cs" />
+    <Compile Include="Reflection\MethodInvoker.cs" />
+    <Compile Include="Reflection\PropertyAccessor.cs" />
+    <Compile Include="Reflection\ReflectionCache.cs" />
+    <Compile Include="Scope.cs" />
+    <Compile Include="Security\AESCrypto.cs" />
+    <Compile Include="Security\AsymmetricCrypto.cs" />
+    <Compile Include="Security\CryptoAlgorithm.cs" />
+    <Compile Include="Security\DSACrypto.cs" />
+    <Compile Include="Security\HashCrypto.cs" />
+    <Compile Include="Security\RandomGenerator.cs" />
+    <Compile Include="Security\RC4Crypto.cs" />
+    <Compile Include="Security\RC4CryptoTransform.cs" />
+    <Compile Include="Security\RSACrypto.cs" />
+    <Compile Include="Security\SymmetricCrypto.cs" />
+    <Compile Include="Security\CryptographyFactory.cs" />
+    <Compile Include="Security\ICryptoProvider.cs" />
+    <Compile Include="Extensions\ChineseSpellHelper.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Extensions\DictionaryExtension.cs" />
+    <Compile Include="Extensions\EnumerableExtension.cs" />
+    <Compile Include="Extensions\EnumExtension.cs" />
+    <Compile Include="Extensions\GenericExtension.cs" />
+    <Compile Include="Extensions\MathExtension.cs" />
+    <Compile Include="Extensions\NumericExtension.cs" />
+    <Compile Include="Extensions\ReflectionExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Extensions\StringResource.cs" />
+    <Compile Include="Extensions\XmlExtension.cs" />
+    <Compile Include="Linq\Expressions\ExpressionExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Linq\Expressions\ExpressionVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Configuration\LoggingConfigurationSection.cs" />
+    <Compile Include="Logging\Configuration\LoggingConfigurationSectionHandler.cs" />
+    <Compile Include="Logging\Configuration\LoggingConfigurationSetting.cs" />
+    <Compile Include="Logging\DefaultLogger.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\LoggerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Localization\ResDescriptionAttribute.cs" />
+    <Compile Include="Localization\ResDisplayNameAttribute.cs" />
+    <Compile Include="Localization\StringResource.cs" />
+    <Compile Include="Security\TripleDESCrypto.cs" />
+    <Compile Include="Serialization\BinarySerializer.cs" />
+    <Compile Include="Serialization\BinaryCompressSerializer.cs" />
+    <Compile Include="Serialization\BinaryCryptoSerializer.cs" />
+    <Compile Include="Serialization\ConverterList.cs" />
+    <Compile Include="Serialization\DateTimeJsonConverter.cs" />
+    <Compile Include="Serialization\ExpressionJsonConverter.cs" />
+    <Compile Include="Serialization\ExpressionJsonReader.cs" />
+    <Compile Include="Serialization\ExpressionJsonWriter.cs" />
+    <Compile Include="Serialization\FullDateTimeJsonConverter.cs" />
+    <Compile Include="Serialization\IBinarySerializer.cs" />
+    <Compile Include="Serialization\IgnoreSerializationBinder.cs" />
+    <Compile Include="Serialization\ITextConverter.cs" />
+    <Compile Include="Serialization\JsonConvertContext.cs" />
+    <Compile Include="Serialization\JsonConverter.cs" />
+    <Compile Include="Serialization\JsonDeserialize.cs" />
+    <Compile Include="Serialization\JsonReader.cs" />
+    <Compile Include="Serialization\JsonFormat.cs" />
+    <Compile Include="Serialization\JsonSerialize.cs" />
+    <Compile Include="Serialization\JsonSerializeOption.cs" />
+    <Compile Include="Serialization\JsonSerializer.cs" />
+    <Compile Include="Serialization\SerializeContext.cs" />
+    <Compile Include="Serialization\SerializerUtil.cs" />
+    <Compile Include="Serialization\SerializerException.cs" />
+    <Compile Include="Serialization\JsonTokens.cs" />
+    <Compile Include="Serialization\JsonWriter.cs" />
+    <Compile Include="Serialization\SerializeOption.cs" />
+    <Compile Include="Serialization\SerializeToken.cs" />
+    <Compile Include="Serialization\ITextSerializable.cs" />
+    <Compile Include="Serialization\ITextSerializer.cs" />
+    <Compile Include="Serialization\NoTextSerializableAttribute.cs" />
+    <Compile Include="Serialization\TextSerializeElementAttribute.cs" />
+    <Compile Include="Serialization\TextSerializeElementPropertyHelper.cs" />
+    <Compile Include="Serialization\TimeSpanConverter.cs" />
+    <Compile Include="Serialization\UnicodeStringJsonConverter.cs" />
+    <Compile Include="Serialization\ValueConverter.cs" />
+    <Compile Include="Serialization\XmlConverter.cs" />
+    <Compile Include="Serialization\XmlDeserialize.cs" />
+    <Compile Include="Serialization\XmlSerialize.cs" />
+    <Compile Include="Serialization\XmlSerializeOption.cs" />
+    <Compile Include="Serialization\XmlSerializer.cs" />
+    <Compile Include="SR.cs" />
+    <Compile Include="Subscribes\ISubscribe.cs" />
+    <Compile Include="Subscribes\SubscribeManager.cs" />
+    <Compile Include="TimeWatcher.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SR.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resources" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

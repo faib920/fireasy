@@ -1,0 +1,142 @@
+﻿.panel-tool {
+    width: 0px;
+}
+
+.accordion .accordion-header {
+    background: linear-gradient(to bottom,#EFF5FF 0,#E0ECFF 100%);
+    padding: 6px 0 6px 0;
+}
+
+.header {
+    font-size: 32px;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-weight: bold;
+    color: gray;
+}
+
+.navlist {
+    list-style-type: none;
+    margin: 0px;
+    padding: 4px;
+}
+
+    .navlist li {
+        padding: 0px;
+    }
+
+        .navlist li a {
+            line-height: 24px;
+            width: 100%;
+        }
+
+        .navlist li div {
+            margin: 2px 0px;
+            padding-left: 10px;
+            padding-top: 2px;
+            border: 1px dashed #f8fbfc;
+        }
+
+            .navlist li div.hover {
+                border: 1px dashed #99BBE8;
+                background: #E0ECFF;
+                cursor: pointer;
+            }
+
+                .navlist li div.hover a {
+                    color: #416AA3;
+                }
+
+            .navlist li div.selected {
+                border: 1px solid #99BBE8;
+                background: #E0ECFF;
+                cursor: default;
+            }
+
+                .navlist li div.selected a {
+                    color: #416AA3;
+                    font-weight: bold;
+                }
+
+.third_ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: none;
+}
+
+    .third_ul li {
+        padding-left: 20px;
+    }
+
+.firstIconC {
+    background: url(../images/menu/menuc.png) no-repeat;
+    width: 18px;
+    line-height: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.firstIconO {
+    background: url(../images/menu/menuc.png) no-repeat;
+    width: 21px;
+    line-height: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.nodeClose {
+    background: url(../images/menu/nodeClose.png) no-repeat;
+    width: 6px;
+    line-height: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+
+.nodeOpen {
+    background: url(../images/menu/nodeOpen.png) no-repeat;
+    width: 6px;
+    line-height: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.node {
+    background: url(../images/menu/nodeIcon.png) no-repeat;
+    width: 16px;
+    line-height: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.leaf {
+    background: url(../images/menu/leafIcon.png) no-repeat;
+    width: 16px;
+    line-height: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.panel-title {
+    color: #000333;
+    margin-left: 20px;
+}
+
+.panel-icon {
+    margin-left: 5px;
+}
+
+.accordion-body {
+    background-color: #f8fbfc;
+}
+
+.accordion-header-selected {
+    background-color: rgb(224, 236, 255);
+}

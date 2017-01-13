@@ -1,0 +1,408 @@
+Nuget: Fireasy
+Nuget: Fireasy.AspNet
+Nuget: Fireasy.AspNet.Mvc
+
+github
+https://github.com/faib920/fireasy.git
+
+1.5.40.42052
+** Fireasy.Common
+1、修复：序列化DataRow时的bug
+2、新增：缓存管理接口增加清理所有的方法
+
+** Fireasy.Data
+
+** Fireasy.Data.Entity
+3、修复：Extend和ExtendAs无法使用常量表达式的bug
+4、修复：实体类继承中获取属性的bug
+
+1.5.40.42050
+2015-5-15
+** Fireasy.Common
+1、完善：日志记录，深度记录StackTrack
+2、完善：动态方法构造器，深度遍列接口方法
+
+** Fireasy.Data
+3、修复：数组转换器，未返回数组的bug
+4、完善：批量插入中，生成sql中转义字符的参数化
+5、完善：添加默认的配置实例
+6、完善：IProvider增加更新连接串参数的方法，移除上版本改变数据库的方法
+
+** Fireasy.Entity
+7、修复：EntityDatabaseFactory未根据实例名创建对象的bug
+8、修复：外键无效时延迟加载的bug
+9、修复：日期相减函数解析的bug
+
+1.5.40.42048
+2015-5-5
+** Fireasy.Common
+1、完善：ToType深度转换
+2、完善：AggregateException
+
+** Fireasy.Data
+3、优化：连接串属性集合
+4、完善：Oracle创建序列时初始值取表字段最大值
+5、完善：增加Global配置，增加逃逸符开关
+6、完善：Firebird相关插件
+7、新增：IProvider增加改变数据库
+8、修复：Oracle序列值名称长度太长时的bug
+9、完善：连接参数识别
+10、新增：数据库架构
+
+** Fireasy.Data.Entity
+11、新增：全局查询策略
+12、新增：SqlExpression表达式
+13、完善：解析配置中去掉逃逸符开关
+14、修复：调用序列生成器时未传入字段
+15、完善：批操作时事件订阅
+16、完善：ExtendAs解析
+17、修复：延迟加载和树持久化时环境丢失
+
+1.5.40.42046
+2015-11-2
+** Fireasy.Common
+1、完善：IOC没有注册类型时，反转返回默认的实例
+
+** Fireasy.Data
+2、修复：数据分页未返回总记录数的Bug
+
+** Fireasy.Data.Entity
+3、修复：轻量级实体引用关联属性时无法返回数据的bug
+4、完善：修改或插入实体时可同时对关联实体属性进行操作
+5、完善：将实体的类型、状态等移到代理类中
+6、修复：Linq中日期相减的bug
+
+
+** Fireasy.Web.Mvc
+6、完善：控制器工厂中引入IOC容器
+
+1.5.40.42044
+2015-8-30
+=============================================================================================
+** Fireasy.Common
+1、优化：Json反序列化，全面提升性能
+2、新增：Json和Xml转换器流读写模式
+3、完善：Json反序列化对字典和列表的完善
+4、完善：Json反序列化对回车换行的忽略
+5、新增：ExtendAs扩展方法
+6、修复：4.6下Aop设置属性的bug
+7、优化：使用ConcurrentDictionary
+8、修复：IOC容器过期的bug
+
+** Fireasy.Data
+9、新增：对PostgreSQL的支持
+10、优化：提高MsSql和Oracle的架构插件性能
+
+** Fireasy.Data.Entity
+11、修复：批量插入bug **
+12、完善：主键生成
+13、新增：对To扩展方法的解析
+14、新增：自定义方法调用的解析
+15、优化：可以不用定义关系特性，而使用主外键对应规则生成映射
+16、完善：主键优先策略
+
+** Utilities
+14、新增：Bundle配置增加EnableOptimization开关
+
+1.5.40.42042
+2015-7-8
+=============================================================================================
+** Fireasy.Common
+1、新增：生成时间戳的扩展方法
+2、新增：反射缓存机制及反射的扩展方法
+3、新增：图像处理的扩展方法
+4、新增：程序配置的托管工厂
+5、完善：加密解密库
+6、修复：IOC容器30分钟后过期的bug
+
+** Fireasy.Data
+7、新增：可编码的数据类型
+8、优化：Identity生成的缓存
+
+** Fireasy.Data.Entity
+9、完善：插入或更新未对复杂类型进行的处理
+10、完善：使用轻量级实体时对插入表达式的参数处理
+11、完善：插入时主键及默认值的处理
+12、优化：移除IdentityGenerateType.Guid，合并到Generator
+
+1.5.40.42040
+2015-6-1
+=============================================================================================
+
+** Fireasy.Data.Entity
+1、修复：Join中无法使用ExtendAs的bug
+2、修复：实体Wrap无法使用表达式的bug
+3、优化：轻量级实体插入时不再需要Wrap
+4、修复：查询出的实体属性状态的bug
+
+** Fireasy.Web
+5、优化：调整命名空间，以免和mvc冲突
+
+1.5.40.42038
+2015-5-26
+=============================================================================================
+
+** Fireasy.Data.Entity
+1、新增：轻量级实体模型增加Wrap方法
+2、优化：原All扩展方法改名为Extend，并增加ExtendAs方法
+
+** Fireasy.Data.Validation
+3、完善：为正则表达式验证提供配置
+
+** Fireasy.Web
+4、完善：HtmlHelper增加Attr方法
+
+** Fireasy.Web.Mvc
+5、完善：增强获取参数值的方法
+
+1.5.40.42036
+2015-5-21
+=============================================================================================
+
+** Fireasy.Common
+1、修正：json反序列的bug
+2、新增：xml序列化
+3、新增：分页结果模型
+
+** Fireasy.Data.Entity
+4、修复：返回关联对象后使用Distinct的问题
+5、修复：空值取出来后不为空的bug
+6、新增：复杂数据转换的支持
+
+** Fireasy.Web
+7、完善：包装过滤器集合，可以移除指定类型的过滤器
+
+** Fireasy.EasyUI
+8、新增：DateBoxSetting增加DateValue属性
+
+** Fireasy.Utilities.Web
+9、新增：分页结果的json序列化转换器
+10、新增：MVC下的验证过滤器
+
+** Fireasy.Web.Mvc (new)
+
+** Fireasy.EasyUI.Mvc (new)
+
+1.5.40.42034
+2015-4-22
+=============================================================================================
+** Fireasy.Common
+1、修复：扩展方法ToHex、FromHex位数不足的bug
+2、完善：字符串增加扩展方法Like，主要为了方便在Entity Linq中使用Like
+
+** Fireasy.Data
+3、修复：Database的格式化sql问题
+
+** Fireasy.Data.Entity
+4、修复：使用IQueryable的变量查询时其自身条件无法被拼接的问题
+5、完善：使EntityPersister的Query能够使用到select表达式中
+6、完善：EntityTreePersister的QueryChildren方法返回类型为IQueryable
+7、完善：移除EntityTreeMappingAttribute中的HasChildren属性，同时select表达式中可以使用HasChildren方法
+
+** Fireasy.Web
+8、新增：HtmlHelper增加Style方法
+9、修复：Label方法的标签关闭问题
+10、新增：Input扩展类
+
+** Fireasy.EasyUI
+11、完善：所有扩展方法中的参数id换成exp，根据前缀自动识别id和name
+
+** Fireasy.Utilities.Web
+12、完善：始终屏蔽EnableOptimizations
+
+1.5.40.42032
+2015-4-8
+=============================================================================================
+** Fireasy.Common
+1、新增：AOP的CallInfo增加一个Cancel属性
+
+** Fireasy.Data.Entity
+2、完善：Join中有一边为Group时，对连接条件中Key的替换处理
+3、新增：LighEntityObject类，减少实体定义的代码量
+
+1.5.40.42030
+2015-4-1
+=============================================================================================
+** Fireasy.Common
+1、完善：To方法，可以对可枚举类型进行转换
+2、完善：Json序列化对动态类型的支持
+
+** Fireasy.Data
+3、新增：Update方法的另一个版本
+
+** Fireasy.Data.Entity
+4、新增：Linq扩展方法Order和ThenBy
+5、完善：实体增加All扩展方法，可以简便返回所有属性
+6、新增：仓储增加Include、Associate和Batch方法，EntityContext增加Apply方法
+7、完善：实体映射移除 InstanceName 属性
+
+** Fireasy.Web
+8、新增：IServiceAssistant修饰，可以输出帮助文档和生成程序代码
+
+** Fireasy.EasyUI
+9、新增：增加了部份事件参数
+
+
+1.5.40.42028
+2015-2-4
+=============================================================================================
+** Fireasy.Common
+1、新增：DynamicBuilder新增使用表达式SetCustomAttribute的重载方法
+2、新增：DateTimeExtension新增获取月第一周开始日期的方法
+3、新增：ClientNotificationException异常类
+4、修复：Extend扩展方法未使用LazyManager的问题
+5、完善：New和CloneTo方法新增接口类型的支持
+6、完善：New方法新增对IAopSupported的支持
+7、完善：Aop可以在类上定义全局的Interceptor
+
+** Fireasy.Data
+8、新增：语法扩展插件新增IsMatch方法（mssql暂未实现）
+9、新增：SQLiteFunctionBuilder
+10、完善：IBatcherProvider接口的方法中去掉ObjectReader参数
+11、完善：GetDatabaseFromScope方法不再抛异常，而是返回null
+12、新增：ISyntaxProvider新增构造日期类型的方法
+
+** Fireasy.Data.Entity
+13、新增：LINQ对Regex.IsMatch方法的解析
+14、修复：SQLite下无法返回匿名对象的bug
+15、完善：EntityContext增加事务相关方法，与EntityPersister可以进行联动
+16、新增：EntityContext增加CreateTreePersister方法
+17、完善：增强底层Linq的解析，支持嵌套，匿名类型
+
+** Fireasy.Web (New)
+Http服务(webapi)
+Bundle配置
+HTML标签呈现
+
+** Fireasy.EasyUI (New)
+EasyUI表单插件呈现，绑定验证
+
+** Fireasy.Portal
+
+
+1.5.40.42026
+2014-10-7
+=============================================================================================
+1、完善：在更新实体进行验证时只能修改过的属性进行验证
+2、完善：批量插入方法增加完成百分比的通知方法
+3、完善：提供将实体正常化、获取实体属性更改前值的扩展方法
+4、完善：Extend方法，使用动态类型提高性能
+5、新增：延迟加载管理接口，解决json序列化实体对象时关系型属性循环引用的问题
+6、新增：消息订阅管理器，可以订阅实体持久化的消息
+8、新增：表达式的json序列化和反序列化
+9、新增：对动态类型的json序列化和反序列化(list<dynamic>暂没有实现)
+10、新增：EntityContext类，可以使用类似EF的模式
+11、完善：实体持久化增加使用计算器更新实体的方法
+12、新增：动态类型DynamicExpandoObject，以及相关的扩展方法
+13、完善：删除了ISerializeConvertable类
+
+1.5.40.42024
+2014-3-13
+=============================================================================================
+1、修复：查询返回匿名类型时LINQ解析成OUTER APPLY的bug
+2、修复：在SQLite中查询返回匿名类型时无法读取的bug
+3、修复：AOP对所注入方法返回值的处理，同时可以使用一组参数构造代理对象
+4、完善：DynamicMethodBuilder和DynamicConstructorBuilder可以定义默认值参数
+5、新增：Entity新增Linq扩展方法OrderBy和ThenBy
+6、新增：实体持久化新增BatchCreate方法
+7、完善：批量插入插件，使之与IDatabase共用同一个连接；更改SQLite批量插入的方法
+8、修复：OracleAccessProvider中没有ITranslateProvider的问题
+9、完善：Database执行SQL错误时仍记录到[日期].error.log
+10、新增：UniqueCodeAttribute验证特性，可对编码唯一性进行验证
+11、新增：Fireasy.Data.Validation.dll程序集
+
+1.5.40.42023
+2013-12-13
+=============================================================================================
+** 修复：Linq表达式中域变量的解析问题
+
+1.5.40.42022
+2013-12-10
+=============================================================================================
+1、新增：一个类似jquery中extend的扩展方法
+2、完善：Json序列化增加对Type类型的处理，以防止递归调用
+3、新增：数据库连接字符串可以经过加密后存放
+4、修复：EntityPersister类，去除构造函数中的objectName参数
+5、修复：ObjectReader类，取消对ValueType及String类型属性的限制
+6、修复：树实体持久化中未对实体对象进行验证的bug
+
+1.5.40.42020
+2013-10-22
+=============================================================================================
+
+1、修复：ICacheManager接口的TryGet方法，移除Get和Remove非泛型方法，移除CacheBehavior选项
+2、修复：MemoryCacheManager类的TryGet方法在缓存过期时未由factory函数返回缓存项的bug
+3、新增：DateTimeConverter类，用于解决序列化日期时，直接生成\/Date()\/的字符串
+4、完善：移除了PropertyMetadataValidationAttribute验证类
+5、完善：CodeCompiler类，增加CompileAssembly方法
+6、修复：Json序列化Dictionary时以[开始的bug
+7、修复：AOP无法拦截带有out或ref参数的方法的bug
+8、完善：去除Json序列化的EncodeLevel选项，新增UnicodeConverter类
+9、修复：Json反序列化匿名对象时属性名与参数顺序不一致时无法执行的bug
+10、完善：改进Json反序列化时，属性名不带引号也可以
+11、优化：Oracle、MySql和SQLite大数据批量插入的方法
+12、完善：改进ProviderHelper类，新增GetSupportedProviders方法
+13、完善：变更ILogger的方法
+14、新增：对log4net和memcached的支持(但是memcached服务好象没有明显的内存变化)
+15、......
+
+1.5.40.42018
+=============================================================================================
+2013-7-11
+
+1、修复：Json反序列化DataTable时，各行中列顺序不一致时数据错位的问题
+2、修复：表达式无法解析为NOT IS NULL时的bug
+3、修复：无法返回可空类型值的bug
+4、优化：AOP拦截器，在初始化方法中可以取到完整的Attribute，在异常块处理中能够设置返回值
+5、优化：AOP拦截器，能够截取方法参数和设置返回值
+6、修复：树型实体持久化递归返回子节点陷入死循环的bug
+7、完善：移除ICustomRewriter接口，换成ExpressionRewriteContainer，可以添加表达式的前置和后置重写器
+8、完善：RowMapper使其支持富类型对象的转换
+9、修复：Linq嵌套查询时缓存键生成的bug
+
+1.5.40.42016
+=============================================================================================
+2013-6-7
+
+1、修复：DynamicBuilder的SetCustomAttribute方法无法解析带变量的表达式的bug
+2、修复：DynamicAssemblyBuilder无法使用引用同一程序集中类的bug
+3、修复：DynamicAssemblyBuilder无法定义接口类型的bug
+4、修复：解决使用IQueryable嵌套查询时，无法识别序列的问题
+5、修复：Database的FillDataSet使用分页查询时无法正确返回数据的bug
+6、完善：Json序列化参数PascalNaming改为CamelNaming
+7、完善：动态持久化增加对实体类型验证的规则定义
+8、完善：改进数据验证单元，在验证内部可以取到当前的Database对象
+9、完善：改进实体持久化Save实体集方法，非EntitySet类型对象也能保存
+10、修复：Json序列化时对循环对象的bug
+11、完善：改进ReadWriteLocker类的方法
+
+1.5.40.42014
+=============================================================================================
+2013-5-3
+
+1、修复：树型实体持久化中将实体插入为孩子时，对目标兄弟孩子多余处理的bug
+2、修复：Json序列化中，循环引用检测的bug
+3、完善：Provider，去除ProviderType
+4、完善：SchemaProvider，去除SchemaCatalog
+5、完善：去除ConnectionString中的Version属性，MsSqlSyntax分页方法由DbConnection自动获得数据库版本
+
+1.5.40.42012
+=============================================================================================
+2013-3-29
+
+1、优化：在树映射中增加HasChildren标识，以加快树检索的速度
+2、修复：树实体持久化中的bug
+3、完善：暂时去掉sql中*的解析
+
+1.5.40.42010
+=============================================================================================
+2013-3-28
+
+1、完善：修改Json序列化类，加入类型转换器
+2、完善：修改动态实体持久化对象在销毁时，其Database对象没有销毁的bug
+3、完善：修改使用OracleAccess.Client组件时，DataReader的GetInt32等方法转换无效的bug
+4、完善：调整树型实体持久化类，可以对指定特性的类型进行持久化管理
+5、完善：调整树实体映射结构，可省略Order和Level两个属性
+6、完善：暂时去除树型实体的上移、下移、交换等方法。
+7、优化：Oracle下的分页查询
+8、优化：分页查询，解析出sql中的字段，然后将*替换成具体的字段

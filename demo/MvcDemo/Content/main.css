@@ -1,0 +1,139 @@
+﻿body {
+    font-size:12px;
+    font-family:微软雅黑;
+    margin:10px;
+}
+
+a:link, a:visited, a:hover {
+    color:blue;
+    text-decoration:none;
+}
+
+.form-body {
+    border-collapse:collapse;
+    border-spacing:2px;
+    margin-top:20px;
+    margin-left:30px;
+}
+
+.form-body td {
+    padding:5px;
+}
+
+.form-body td.addon {
+    width:100px;
+    text-align:right;
+    vertical-align:top;
+    padding-top:8px;
+    height:22px;
+}
+
+.form-body td.label {
+    width: 80px;
+    text-align:right;
+    vertical-align:top;
+    padding-top:6px;
+}
+
+.form-button {
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: right;
+    background-color:#f9f9f9;
+    border-top:1px solid #eeeeee;
+}
+.form-button a.l-btn {
+    margin-right:8px;
+}
+
+.toolbar
+{
+    height: 33px;
+}
+.query
+{
+    padding: 2px;
+    background-color:#fcfcfc;
+    *height: 30px;
+}
+.query .addon {
+    text-align:right;
+}
+.query table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.query td
+{
+    padding: 5px;
+}
+.query_1line
+{
+    height: 73px;
+}
+.query_2line
+{
+    height: 105px;
+}
+
+.readonly {
+    background-color: #ffffda;
+}
+
+INPUT::-moz-placeholder {
+  color: #cccccc;
+  font-style:italic;
+  opacity: 1;
+}
+INPUT:-ms-input-placeholder {
+  color: #cccccc;
+  font-style:italic;
+}
+INPUT::-webkit-input-placeholder {
+  color: #cccccc;
+  font-style:italic;
+}
+
+.textbox {
+  position: relative;
+  border: 1px solid #95B8E7;
+  background-color: #fff;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.textbox-text-readonly {
+    background-color: #ffffda;
+}
+
+.datagrid-row-selected {
+  background: #0081c2;
+  color: #fff;
+}
+
+.combobox-item-selected {
+  background-color: #0081c2;
+  color: #fff;
+}
+
+.tree-node-selected {
+  background: #0081c2;
+  color: #fff;
+}
+
+.l-btn-left {
+    padding:0px 6px 0px 4px;
+}
+
+.l-btn-icon {
+    padding-left:6px;
+}
