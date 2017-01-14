@@ -23,7 +23,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;N40</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;N40;DYNAMIC</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Fireasy.Data.Entity.XML</DocumentationFile>
@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="DefaultContextProvider.cs" />
     <Compile Include="IEntityTreePersister.cs" />
+    <Compile Include="IRespositoryInitializer.cs" />
     <Compile Include="Linq\DefaultRepositoryProvider.cs" />
     <Compile Include="EntityContextTypesInitializersPair.cs" />
     <Compile Include="EntityOwner.cs" />
@@ -354,6 +355,7 @@
     <Compile Include="RelationshipException.cs" />
     <Compile Include="RelationshipKey.cs" />
     <Compile Include="RelationshipUnity.cs" />
+    <Compile Include="RespositoryCreator.cs" />
     <Compile Include="RowMapperFactory.cs" />
     <Compile Include="SR.cs" />
     <Compile Include="Subscribes\EntityPersistentEventType.cs" />

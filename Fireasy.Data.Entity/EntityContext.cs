@@ -49,6 +49,9 @@ namespace Fireasy.Data.Entity
         protected virtual void Initialize()
         {
             context = new InternalContext(configName);
+            context.OnRespositoryCreated = new Action<Type>(t =>
+                {
+                });
         }
 
         /// <summary>

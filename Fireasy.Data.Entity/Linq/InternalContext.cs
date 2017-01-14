@@ -39,6 +39,8 @@ namespace Fireasy.Data.Entity.Linq
 
         public IDatabase Database { get; internal set; }
 
+        public Action<Type> OnRespositoryCreated { get; set; }
+
         bool IQueryPolicy.IsIncluded(MemberInfo member)
         {
             return included.Contains(member);
@@ -88,12 +90,14 @@ namespace Fireasy.Data.Entity.Linq
         public IRepositoryProvider<TEntity> CreateRepositoryProvider<TEntity>() where TEntity : IEntity
         {
             var factory = Database.Provider.GetService<IContextProvider>() ?? new DefaultContextProvider();
+            RespositoryCreator.TryCreate(typeof(TEntity), this);
             return factory.Create<TEntity>(this);
         }
 
         public IRepositoryProvider CreateRepositoryProvider(Type entityType)
         {
             var factory = Database.Provider.GetService<IContextProvider>() ?? new DefaultContextProvider();
+            RespositoryCreator.TryCreate(entityType, this);
             return factory.Create(entityType, this);
         }
 
